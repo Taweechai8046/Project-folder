@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav a {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.search {
+  padding: 6px 15px;
+  border-radius: 20px;
+  border: 1px solid #555;
+  background: transparent;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+  url("https://images.unsplash.com/photo-1501785888041-af3ef285b470")
+  center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 60px;
+}
+
+.hero button {
+  margin-top: 30px;
+  padding: 12px 30px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: white;
+  cursor: pointer;
+}
+
+/* ANIMATION */
+.fade-slide {
+  animation: fadeSlide 1.2s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TRIPS */
+.trips {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 150px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: .4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background: #000;
+    width: 200px;
+    transition: .3s;
+  }
+
+  .nav.open {
+    right: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}
